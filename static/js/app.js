@@ -4,9 +4,11 @@ function buildMetadata(sample) {
 
     // get the metadata field
     var metadata=data.metadata;
+    console.log("Metadata:", metadata);
 
     // Filter the metadata for the object with the desired sample number
     var filteredMeta=metadata.filter(obj => obj.id == parseInt(sample))[0];
+    console.log("Filtered Metadata:", filteredMeta);
 
     // Use d3 to select the panel with id of `#sample-metadata`
     var panel=d3.select("#sample-metadata");
@@ -30,14 +32,16 @@ function buildCharts(sample) {
 
     // Get the samples field
     var samples=data.samples;
+    console.log("Samples:", samples);
 
     // Filter the samples for the object with the desired sample number
-    var filteredSample = samples.filter(obj => obj.id === sample)[0];
+    var filteredSamples = samples.filter(obj => obj.id === sample)[0];
+    console.log("Filtered Samples:", filteredSamples);
 
     // Get the otu_ids, otu_labels, and sample_values
-    var otuIds = filteredSample.otu_ids;
-    var otuLabels = filteredSample.otu_labels;
-    var sampleValues = filteredSample.sample_values;
+    var otuIds = filteredSamples.otu_ids;
+    var otuLabels = filteredSamples.otu_labels;
+    var sampleValues = filteredSamples.sample_values;
 
     // Build a Bubble Chart
     var bubbleTrace = {
@@ -51,6 +55,7 @@ function buildCharts(sample) {
         colorscale: 'Portland'
       }
     };
+    console.log("Bubble Trace:", bubbleTrace);
 
     var bubbleLayout = {
       title: 'Bacteria Cultures Per Sample',
@@ -74,7 +79,8 @@ function buildCharts(sample) {
       orientation: 'h',
       text: otuLabels.slice(0, 10).reverse(),
     };
-
+    console.log("Bar Trace:", barTrace);
+  
     var barLayout = {
       title: 'Top 10 Bacteria Cultures Found',
       xaxis: { title: 'Number of Bacteria' }
@@ -93,6 +99,7 @@ function init() {
 
     // Get the names field
     var names = data.names;
+    console.log("Names:", names);
 
     // Use d3 to select the dropdown with id of `#selDataset`
     var dropdown = d3.select("#selDataset");
