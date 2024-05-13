@@ -23,7 +23,15 @@ colorscale: 'Portland'
 
 ##### Adding favicon: 
 - Selected from free icon gallery: https://icons8.com/icon/set/science/fluency
+- Downloaded .png file and saved to Images file to insert in HTML
 ```html
 <link rel="icon" type="image/x-icon" href="Images/icons8-biotech-16.png">
 ```
+
+##### Additional Resources
+- JavaScript filter() for Objects: https://stackoverflow.com/questions/5072136/javascript-filter-for-objects
+
+- Append key-value tags with d3: https://stackoverflow.com/questions/170986/what-is-the-best-way-to-add-options-to-a-select-from-a-javascript-object-with-jq
+
+- Difference between .forEach and $.each: https://stackoverflow.com/questions/13824221/the-difference-between-foreach-and-each
 
